@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Display_card.css";
-import Create_card from '../create-card/create_card';
+import Create_card from '../create_card/create_card';
 import { useFormContext } from '../FormContext';
 import carddata from '../../assets/carddata';
 

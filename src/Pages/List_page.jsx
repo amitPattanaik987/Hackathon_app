@@ -3,7 +3,7 @@ import Banner1 from '../Components/Banner1/Banner1'
 import Achievements from '../Components/Achievements/Achievements'
 import Challenges from '../Components/Challenges/Challenges'
 import Search from '../Components/Search_page/Search'
-import Display_card from '../Components/Display-card/Display_card'
+import Display_card from '../Components/Display_card/Display_card'
 
 
 export default function List_page() {
