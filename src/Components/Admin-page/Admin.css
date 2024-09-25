@@ -1,0 +1,54 @@
+.header{
+    padding: 20px 80px;
+}
+.form{
+    padding: 10px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form p{
+    margin: 0;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.all input{
+    border-radius: 5px;
+    padding: 10px;
+}
+.name input{
+    width: 25%;
+}
+.Start-date input{
+    width: 30%;
+}
+.end-date{
+    width: 30%;
+}
+.description textarea{
+    width: 50%;
+}
+
+.image label{
+    border: 1px solid gray;
+    width: 20%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+}
+
+.drop-down select{
+    border-radius: 5px;
+    width: 20%;
+    padding: 10px;
+}
+
+.success{
+    width: 20%;
+}

@@ -1,0 +1,40 @@
+.main{
+    background-color:#003145;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    color: white;
+    display: flex;
+    gap: 40px;
+}
+
+.left-text .text-1{
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.left-text .text-2{
+    font-size: 16px;
+}
+.line{
+    width:9.71px;
+    height:115.91px;
+    background-color:#FFCE5C;
+}
+
+.left-second{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.right img{
+    width: 70%;
+    height: 70%;
+    transform: rotate(21.41deg);
+    margin-left: 25%;
+}

@@ -1,0 +1,36 @@
+.Achievements{
+    width: 100%;
+    height: 25vh;
+    background-color: #002A3B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr{
+    border: 1px solid #C4C4C4;
+    transform: rotate(90deg);
+    width: 45px;
+}
+
+.box2 img{
+    border-radius: 10px;
+}
+
+.Achievements div p{
+    color: white;
+    margin: 0;
+}
+.Achievements div img{
+    width: 55px;
+    height: 55px;
+}
+.Achievements .box{
+    display: flex;
+    gap: 30px;
+}
+
+.Achievements div div{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,26 @@
+.challenges {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+}
+.header{
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+.challenges p span {
+  color: rgb(117, 176, 27);
+}
+.challenges-under {
+  padding: 20px;
+  width: 80%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
