@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Display_card.css";
-import Create_card from '../create_card/create_card';
+import Create_card from '../create_card/Create_card';
 import { useFormContext } from '../FormContext';
-import carddata from '../../assets/carddata';
 
-export default function Display_card({filterClick}) {
-    const { hackathons, searchQuery, filters } = useFormContext();
+export default function Display_card({ filterClick }) {
+    const { hackathons, searchQuery, filters, setHackathons } = useFormContext();
+
+    useEffect(() => {
+        fetch("http://localhost:3000/gethackathons")
+            .then((res) => res.json())
+            .then((data) => {
+                setHackathons(data);
+            })
+            .catch((error) => {
+                console.error("Error fetching hackathons:", error);
+            });
+    }, [setHackathons]);
 
     const getStatus = (startDate, endDate) => {
         const now = new Date();
@@ -22,7 +32,7 @@ export default function Display_card({filterClick}) {
     };
 
     const matchesSearch = (name) => {
-        return name.toLowerCase().includes(searchQuery.toLowerCase());
+        return name && name.toLowerCase().includes(searchQuery.toLowerCase());
     };
 
     const matchesFilters = (status, level) => {
@@ -31,33 +41,19 @@ export default function Display_card({filterClick}) {
         return statusMatches && levelMatches;
     };
 
-    const filteredCardData = carddata.filter((item) => {
-        const status = getStatus(item.startDate, item.enddate);
-        return matchesSearch(item.name) && matchesFilters(status, item.level);
-    });
 
-    const filteredHackathons = hackathons.filter((item) => {
+    const filteredHackathons = (hackathons || []).filter((item) => {
         const status = getStatus(item.startDate, item.endDate);
-        return matchesSearch(item.challengeName) && matchesFilters(status, item.level);
+        return matchesSearch(item.name) && matchesFilters(status, item.level);
     });
 
     return (
         <div className={`display-card ${filterClick && `dimmed`}`}>
-            {filteredCardData.map((item, index) => (
-                <Create_card
-                    key={index}
-                    className="display-card1"
-                    name={item.name}
-                    status={getStatus(item.startDate, item.enddate)}
-                    endDate={item.enddate}
-                    image={item.image}
-                />
-            ))}
             {filteredHackathons.map((item, index) => (
                 <Create_card
                     key={index}
                     className="display-card1"
-                    name={item.challengeName}
+                    name={item.name}
                     status={getStatus(item.startDate, item.endDate)}
                     endDate={item.endDate}
                     image={item.image}

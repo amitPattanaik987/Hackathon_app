@@ -32,6 +32,11 @@
   border-bottom-right-radius: 0;
 }
 
+/* @media (max-height:800px) {
+  .card img{
+    height: 500vh;
+  }
+} */
 .participate img {
   width: 20px;
   height: 20px;
@@ -52,4 +57,21 @@
   background-color: #f2c94c40;
   padding: 2px 15px;
   color: black;
+}
+
+@media (max-height:600px) {
+  .card{
+    height: 85vh;
+  }
+}
+
+@media (max-width:385px) {
+  .participate p{
+    font-size: 12px;
+  }
+}
+@media (max-width:320px) {
+  .participate p{
+    font-size: 9px;
+  }
 }

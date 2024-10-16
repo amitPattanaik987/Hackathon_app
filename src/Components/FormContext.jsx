@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState,useEffect } from 'react';
 
 const FormContext = createContext();
 
@@ -19,18 +19,21 @@ export const FormProvider = ({ children }) => {
         status: [],
         level: [],
     });
-    
-    const addHackathon = (hackathon) => {
-        setHackathons((prevHackathons) => [...prevHackathons, hackathon]);
-    };
+
+    const [spinner, setspinner] = useState(false);
+    const [cardclicked, setcardclicked] = useState();
 
     return (
         <FormContext.Provider
             value={{
+                cardclicked,
+                setcardclicked,
+                spinner,
+                setspinner,
                 formData,
                 setFormData,
                 hackathons,
-                addHackathon,
+                setHackathons,
                 searchQuery,
                 setSearchQuery,
                 filters,

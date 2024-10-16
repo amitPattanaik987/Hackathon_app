@@ -50,7 +50,7 @@ export default function Search({ filterClick, setFilterClick, toggleDim }) {
         <div className='search'>
             <p className='header'>Explore Challenges</p>
             <div className='search-second'>
-                <input type="text" placeholder='🔍 Search' onChange={handleSearch} />
+                <input type="text" placeholder='🔍 Search' onChange={handleSearch} className='text-black'/>
                 <button className={`btn btn-light filter-btn ${filterClick ? 'active-filter' : ''}`} onClick={handleFilterClick}>
                     Filter <img src={arrow} alt="" className={`arrow-icon ${filterClick && `rotate`}`} />
                 </button>

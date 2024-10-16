@@ -3,14 +3,18 @@ import "./Create_card.css";
 import tick from "../../assets/tick_symbol.png";
 import Countdown_timer from '../countdown_timer/Countdown_timer';
 import 'bootstrap/dist/css/bootstrap.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Create_card(props) {
-  const formatDate = (date) => {
-    const options = { day: 'numeric', month: 'long', year: '2-digit', hour: 'numeric', minute: 'numeric', hour12: true };
-    const formattedDate = new Date(date).toLocaleString('en-US', options);
-    return formattedDate.replace(/(\d+)(?=\s)/, (match) => `${match}${getOrdinalSuffix(match)}`); 
-  };
+  const navigate = useNavigate();
 
+  const formatDate = (date) => {
+    const options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+    const dateObj = new Date(date);
+    const day = dateObj.getDate();
+    const formattedDate = dateObj.toLocaleString('en-US', options);
+    return formattedDate.replace(day.toString(), `${day}${getOrdinalSuffix(day)}`);
+  };
 
   const getOrdinalSuffix = (number) => {
     const intNumber = parseInt(number);
@@ -19,7 +23,6 @@ export default function Create_card(props) {
     if (intNumber % 10 === 3 && intNumber % 100 !== 13) return 'rd';
     return 'th';
   };
-
 
   const statusText = () => {
     switch (props.status) {
@@ -56,6 +59,11 @@ export default function Create_card(props) {
 
   const statusStyles = getStatusStyles();
 
+  const handleParticipateClick = () => {
+    // Navigate to the Problem_statements page with the hackathon name as a parameter
+    navigate(`/problem/${props.name}`);
+  };
+
   return (
     <div className='card'>
       <img src={props.image} alt={props.name} />
@@ -68,8 +76,10 @@ export default function Create_card(props) {
         ) : (
           <Countdown_timer targetDate={props.endDate} />
         )}
-        <button className='btn btn-success participate'>
-          <img src={tick} alt="" />Participate Now
+
+        <button className='btn btn-success participate' onClick={handleParticipateClick}>
+          <img src={tick} alt="" />
+          <p>Participate Now</p>
         </button>
       </div>
     </div>

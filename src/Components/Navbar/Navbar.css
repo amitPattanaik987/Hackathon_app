@@ -6,4 +6,51 @@
 .navbar{
     padding: 10px 80px;
     height: 64px;
+    display: flex;
+    align-items: center;
+}
+.navbar li{
+    list-style: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.navbar ul{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    margin: 0;
+}
+.navbar li:hover{
+    color: brown;
+}
+
+@media (max-width:760px) {
+    .navbar ul li{
+        font-size: 15px;
+    }
+    .navbar ul{
+        gap: 35px;
+    }
+}
+@media (max-width:610px) {
+    .navbar ul li{
+        font-size: 15px;
+    }
+    .navbar{
+        padding: 10px 30px;
+    }
+}
+@media (max-width:500px) {
+    .navbar ul li{
+        font-size: 10px;
+    }
+    .navbar ul{
+        gap: 10px;
+        padding: 0px 10px;
+    }
+    .navbar{
+        padding: 10px 0px;
+    }
 }
