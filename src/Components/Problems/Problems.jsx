@@ -6,7 +6,7 @@ export default function Problems({ hackathon_name }) {
   const [collecteddata, setcollecteddata] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/problems", {
+    fetch("https://hackathon-app-2.onrender.com/problems", {
       method: "POST",
       headers: {
         "Accept": "application/json",
