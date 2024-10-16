@@ -66,7 +66,7 @@ export default function Navbar() {
     const headers = {
       "Content-Type": "application/json"
     }
-    const response = await fetch("http://localhost:3000/payment", {
+    const response = await fetch("https://hackathon-app-2.onrender.com/payment", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)
@@ -85,7 +85,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3000/getprime", {
+    fetch("https://hackathon-app-2.onrender.com/getprime", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
