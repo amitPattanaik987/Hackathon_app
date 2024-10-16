@@ -162,8 +162,8 @@ app.post("/payment", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineitems,
     mode: "payment",
-    success_url: "http://localhost:5173/success",
-    cancel_url: "http://localhost:5173/cancel",
+    success_url: "https://hackathon-app-2.onrender.com/success",
+    cancel_url: "https://hackathon-app-2.onrender.com/cancel",
   });
 
   res.json({ id: session.id });
