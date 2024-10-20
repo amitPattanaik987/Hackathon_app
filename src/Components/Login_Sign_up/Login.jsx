@@ -31,7 +31,7 @@ export default function Login() {
             return;
         }
 
-        fetch("https://hackathon-app-2.onrender.com/signup", {
+        fetch("http://localhost:3000/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export default function Login() {
             return;
         }
 
-        fetch("https://hackathon-app-2.onrender.com/login", {
+        fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export default function Login() {
 
     return (
         <section className="vh-100 gradient-custom">
-            <div className=" py-5 h-100 flex items-center justify-center">
+            <div className=" py-5 px-5 h-100 flex items-center justify-center">
                 <div className="flex justify-center items-center h-auto">
                     <div className="">
                         <div className="w-[100%] bg-dark text-white h-auto rounded-xl">
