@@ -25,32 +25,64 @@
 .navbar li:hover{
     color: brown;
 }
-
-@media (max-width:760px) {
-    .navbar ul li{
-        font-size: 15px;
-    }
-    .navbar ul{
-        gap: 35px;
-    }
-}
-@media (max-width:610px) {
-    .navbar ul li{
-        font-size: 15px;
+@media (max-width:950px) {
+    .navbar img{
+        width: 70px;
+        height: 38.11px;
     }
     .navbar{
         padding: 10px 30px;
     }
-}
-@media (max-width:500px) {
+    .navbar ul{
+        gap: 20px;
+        padding: 0;
+    }
     .navbar ul li{
-        font-size: 10px;
+        font-size: 15px;
+    }
+    .primebtn{
+        padding: 0px;
+        width: 150px;
+    }
+    .primebtn p{
+        font-size: 8px;
+    }
+    .last-section{
+        gap: 30px;
+    }
+}
+@media (max-width:700px) {
+    .navbar ul li{
+        font-size: 8px;
     }
     .navbar ul{
         gap: 10px;
-        padding: 0px 10px;
     }
+}
+@media (max-width:490px) {
     .navbar{
-        padding: 10px 0px;
+        padding: 10px 5px;
+    }
+    .last-section{
+        gap: 5px;
+    }
+    .navbar img{
+        width: 40px;
+    }
+    .primebtn{
+        width: 120px;
+        font-size: 10px;
+    }
+}
+@media (max-width:360px){
+    .navbar{
+        padding: 0px;
+    }
+    .primebtn{
+        width: 120px;
+        font-size: 8px;
+    }
+    .navbar ul{
+        gap: 5px;
     }
 }
